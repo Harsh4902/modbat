@@ -16,5 +16,5 @@ WORKDIR /app/modbat
 # Run a Gradle build and test and run bin/test.sh if the tests passed
 RUN ./gradlew test
  
-# RUN sh bin/test.sh
+RUN sh bin/test.sh
 # Enable the last line if build/test quota is sufficient
