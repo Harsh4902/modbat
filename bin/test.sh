@@ -1,7 +1,7 @@
 #!/bin/sh
 TEST_LOG_PATH=log
 
-. bin/testtool.sh >/dev/null 2>&1
+. bin/testtool.sh
 
 ######################## Test declarations ########################
 
