@@ -1,6 +1,6 @@
 #!/bin/bash
 # script to test various configurations of the trace server
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 last_test_skipped=0
 last_test_failed=0
