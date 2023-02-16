@@ -26,7 +26,7 @@ Requirements: [Gradle Build Tool](https://gradle.org/) version 4.
 
 Clone the repository and `cd` into it.
 
-    git clone https://github.com/cyrille-artho/modbat.git
+    git clone https://gitlab.com/cartho/modbat.git
     cd modbat
 
 Assemble the project by running:
