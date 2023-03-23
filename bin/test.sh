@@ -3,14 +3,17 @@ TEST_LOG_PATH=log
 
 . bin/testtool.sh
 
+SCALA="`which scala`"
+
 ######################## Test declarations ########################
 
-APP="scala -cp build/modbat.jar modbat.config.ConfigTest"
+APP="${SCALA} -cp build/modbat.jar modbat.config.ConfigTest"
 
 run 0 $APP -h
 run 0 $APP -s
 
-APP="scala build/config.jar"
+
+APP="${SCALA} build/config.jar"
 
 export LOG_PATH="$TEST_LOG_PATH"
 unset CLASSPATH
@@ -40,7 +43,7 @@ run 0 $APP --version
 # version information from the executable JAR file at run-time
 
 
-APP="scala build/modbat.jar"
+APP="${SCALA} build/modbat.jar"
 #run 1 $APP
 # FIXME: Disabled because dir/log file name not extracted correctly
 

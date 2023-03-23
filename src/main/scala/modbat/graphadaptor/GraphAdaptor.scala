@@ -5,7 +5,7 @@ import modbat.graph.{Edge, Graph, Node}
 import modbat.mbt.{Configuration, ModelInstance}
 
 import java.io.{FileOutputStream, IOException, PrintStream}
-import scala.collection.JavaConverters.{asScalaBufferConverter, asScalaSetConverter, bufferAsJavaListConverter, mapAsScalaMapConverter}
+import scala.jdk.CollectionConverters._
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
