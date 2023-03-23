@@ -11,6 +11,7 @@ import java.net.URL
 import java.net.URLClassLoader
 
 import scala.collection.Iterator
+import scala.collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.mutable.HashMap
 import scala.collection.mutable.HashSet

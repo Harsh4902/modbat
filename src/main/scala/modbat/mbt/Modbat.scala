@@ -31,7 +31,6 @@ import modbat.util.FieldUtil
 
 import scala.math._
 import scala.util.Random
-import scala.language.postfixOps
 import com.miguno.akka.testing.VirtualTime
 import modbat.graph.Edge
 import modbat.graphadaptor.{EdgeData, GraphAdaptor, StateData}
@@ -657,7 +656,7 @@ class Modbat(val mbt: MBT) {
       "*** The total number of times for current state to be visited:" + nState)
 
     // nTranslst is the list to store all values of counters for already selected transitions
-    val nTransLst = transCountLst.lazyZip(precondFailedCountLst).map(_ + _)
+    val nTransLst = (transCountLst, precondFailedCountLst).zipped.map(_ + _)
     mbt.log.debug(
       "*** The list to store all values of counters for already selected transitions:" + nTransLst)
 
@@ -672,7 +671,8 @@ class Modbat(val mbt: MBT) {
 
       // banditUCB is the sum of the average reward, less selected transition value, and expected reward
       val banditUCB =
-        averageRewardLst.lazyZip(banditUCBSelectedTransLst).map(_ + _).lazyZip(expectedRewardList).map(_ + _)
+        ((averageRewardLst, banditUCBSelectedTransLst).zipped.map(_ + _),
+         expectedRewardList).zipped.map(_ + _)
       mbt.log.debug("*** banditUCB:" + banditUCB)
 
       val banditUCBChoiceCandidates =
