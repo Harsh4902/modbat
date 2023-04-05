@@ -181,11 +181,23 @@ task tutorialJar {
 }
 
 test {
-  dependsOn compileTestJava
-  dependsOn compileTestScala
-  dependsOn examplesJar
-  dependsOn tutorialJar
-  dependsOn testsJar
+    dependsOn = [compileTestJava, compileTestScala, examplesJar, tutorialJar, 
+testsJar]
+
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        outputs.upToDateWhen { false }
+        showStandardStreams = true
+    }
+
+    reports {
+        junitXml.enabled = true
+        junitXml.destination = file("build/test-results/test-report.xml")
+        html.enabled = false
+    }
 }
 
 assemble {
