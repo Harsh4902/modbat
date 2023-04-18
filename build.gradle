@@ -195,7 +195,7 @@ testsJar]
 
     reports {
         junitXml.enabled = true
-        junitXml.destination = file("build/test-results/test-report.xml")
+        junitXml.destination = file("$buildDir/test-results")
         html.enabled = false
     }
 }
