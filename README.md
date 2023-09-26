@@ -11,9 +11,15 @@ bytecode. The user defines and compiles a model, which is then explored
 by Modbat and executed against the system under test. Failed test runs
 are reported as an error trace.
 
+## Detailed documentation
+
+A more detailed documentation is on the [Modbat Wiki](https://gitlab.com/cartho/modbat/-/wikis/home).
+This document contains the most important information, but the information on the Wiki is more detailed
+and up to date. 
+
 ## Installation
 
-Requirements: Scala 2.11 or higher (tested on 2.11.8).
+Requirements: Scala 2.11 or higher (tested on 2.11.12).
 
 The distribution comes with two JAR files: modbat.jar and
 modbat-examples.jar. The first file is an executable JAR file that has to
@@ -22,7 +28,7 @@ and contains examples.
 
 ### Building from source
 
-Requirements: [Gradle Build Tool](https://gradle.org/) version 4.
+Requirements: [Gradle Build Tool](https://gradle.org/) version 6.9.
 
 Clone the repository and `cd` into it.
 
