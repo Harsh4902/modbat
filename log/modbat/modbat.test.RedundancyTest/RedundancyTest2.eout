@@ -9,7 +9,7 @@
 [ERROR] 	at modbat.test.Redundancy$$anonfun$5.apply(Redundancy.scala)
 [ERROR] 	at modbat.test.Redundancy$$anonfun$5.apply(Redundancy.scala)
 [WARNING] Error found, model trace:
-[WARNING] modbat/test/Redundancy.scala:10: switch = ...
-[WARNING] modbat/test/Redundancy.scala:17: skip
-[WARNING] modbat/test/Redundancy.scala:17: skip
-[WARNING] modbat/test/Redundancy.scala:23: assert
+[WARNING] modbat/test/Redundancy.scala: switch = ...
+[WARNING] modbat/test/Redundancy.scala: skip
+[WARNING] modbat/test/Redundancy.scala: skip
+[WARNING] modbat/test/Redundancy.scala: assert

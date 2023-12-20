@@ -10,5 +10,5 @@
 [ERROR] 	at modbat.test.StateSetToTrans2$$anonfun$4.apply(StateSetToTrans2.scala)
 [ERROR] 	at modbat.test.StateSetToTrans2$$anonfun$4.apply(StateSetToTrans2.scala)
 [WARNING] Error found, model trace:
-[WARNING] modbat/test/StateSetToTrans2.scala:10: skip
-[WARNING] modbat/test/StateSetToTrans2.scala:12: fail
+[WARNING] modbat/test/StateSetToTrans2.scala: skip
+[WARNING] modbat/test/StateSetToTrans2.scala: fail

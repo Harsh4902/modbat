@@ -223,20 +223,6 @@ savemv modbat.examples.CounterModel2.dot counter2.dot
 checkfile counter2.dot
 
 export CLASSPATH=build/modbat-test.jar
-run 0 $APP -s=1 -n=1 --no-redirect-out modbat.test.StateSetToTrans
-run 0 $APP -s=1 -n=1 --no-redirect-out modbat.test.StateSetToTrans2
-
-run 0 $APP -s=1 -n=10 --no-redirect-out --log-level=fine \
-	modbat.test.Redundancy
-run 0 $APP -s=2e78dcb10b272e5 -n=1 --no-redirect-out \
-	modbat.test.Redundancy
-
-run 0 $APP -s=1 -n=3 --no-redirect-out --log-level=fine \
-	modbat.test.Shortcut
-run 0 $APP -s=1 -n=1 --no-redirect-out modbat.test.Shortcut
-
-
-run 0 $APP -s=1 -n=5 --no-redirect-out modbat.test.SimpleFileModel
 
 run 0 $APP -s=1 -n=5 --no-redirect-out modbat.test.PrecondFalse
 
