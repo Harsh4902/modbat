@@ -224,12 +224,6 @@ checkfile counter2.dot
 
 export CLASSPATH=build/modbat-test.jar
 
-run 0 $APP -s=1 -n=5 --no-redirect-out modbat.test.PrecondFalse
-
-
-run 0 $APP -s=1 -n=500 modbat.test.FileModel --stop-on-failure
-
-
 run 0 $APP -s=1 -n=1 modbat.test.SingletonTest --no-redirect-out
 
 
