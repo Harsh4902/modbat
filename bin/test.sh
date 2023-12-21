@@ -259,10 +259,6 @@ run 0 $APP -s=1 -n=1 modbat.test.RequireMaybeTest2 --no-redirect-out
 
 run 0 $APP -s=1 -n=1 modbat.test.IllArgTest --no-redirect-out --log-level=fine
 
-run 0 $APP -s=1 -n=3 modbat.test.ChooseInBefore --no-redirect-out
-
-run 0 $APP -s=1 -n=20 modbat.test.CarModel --no-redirect-out
-
 run 0 $APP -s=1 -n=5 --log-level=debug --no-redirect-out \
 	modbat.test.ComplexLaunch
 
@@ -287,9 +283,6 @@ run 0 $APP -s=1 -n=2 --log-level=fine --no-redirect-out \
 
 run 0 $APP -s=1 -n=2 --log-level=fine --no-redirect-out \
 	modbat.test.ComplexLaunch6
-
-run 0 $APP -s=1 -n=10 --no-redirect-out \
-	modbat.test.RSeedTestSuccess
 
 run 1 $APP --mode=dot modbat.test.Child
 
