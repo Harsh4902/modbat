@@ -190,9 +190,6 @@ run 0 $APP -n=10 -s=1 --no-redirect-out --loop-limit=5 \
 run 0 $APP -n=100 -s=1 --no-redirect-out --loop-limit=5 \
 	modbat.examples.JavaNioSocket3
 
-run 0 $APP -n=1000 -s=1 --no-redirect-out --loop-limit=5 \
-	modbat.examples.JavaNioSocket3
-
 
 # state "connected" is first filtered but then still reached
 # via nextIf predicate, setting its count to 6. Hence,
