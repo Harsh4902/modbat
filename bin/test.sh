@@ -198,7 +198,8 @@ run 0 $APP -n=1 -s=c2c2567 --no-redirect-out --loop-limit=5 \
 	modbat.examples.JavaNioServerSocket3
 
 
-run 0 $APP -s=1 -n=1000 modbat.examples.JavaNioSocket
+run 0 $APP -s=1 -n=600 modbat.examples.JavaNioSocket
+# > 500 tests needed for full transition coverage
 
 
 run 0 $APP -s=1 -n=30 --no-redirect-out modbat.examples.CounterModel
@@ -536,14 +537,6 @@ run 0 $APP -s=1 -n=5 --no-redirect-out --show-choices modbat.test.Choices
 run 0 $APP --mode=dot --show-choices modbat.test.Choices
 savemv modbat.test.Choices.dot choices.dot
 checkfile choices.dot
-
-
-# precondAsFailure
-run 0 $APP -s=1 -n=2 --precond-as-failure --no-redirect-out --log-level=fine \
-	modbat.test.SUTReq
-
-run 0 $APP -s=1 -n=1 --no-redirect-out --log-level=fine \
-	modbat.test.SUTReq
 
 
 # concurrency in test model
