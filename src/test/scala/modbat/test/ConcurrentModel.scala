@@ -3,7 +3,7 @@ package modbat.test
 import modbat.dsl._
 
 class ConcurrentModel extends Model {
-  class BGThread extends Thread {
+  class BGThread(name: String) extends Thread(name: String) {
     override def run: Unit = {
       assert(false)
     }
@@ -11,7 +11,7 @@ class ConcurrentModel extends Model {
 
   // transitions
   "reset" -> "somestate" := {
-    val t = new BGThread()
+    val t = new BGThread("BGThread")
     t.start
     t.join
   }
