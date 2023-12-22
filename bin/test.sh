@@ -539,6 +539,10 @@ savemv modbat.test.Choices.dot choices.dot
 checkfile choices.dot
 
 
+# concurrency in test model
+run 0 $APP -s=1 -n=1 --no-redirect-out --log-level=fine \
+	modbat.test.ConcurrentModel
+
 export CLASSPATH=build/modbat-examples.jar
 
 run 0 $APP --mode=dot --auto-labels modbat.examples.CounterPosNeg
