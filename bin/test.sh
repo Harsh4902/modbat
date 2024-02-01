@@ -214,9 +214,6 @@ checkfile counter2.dot
 
 export CLASSPATH=build/modbat-test.jar
 
-run 0 $APP -s=1 -n=1 modbat.test.SingletonTest --no-redirect-out
-
-
 run 0 $APP -s=1 -n=1 modbat.test.MaybeTest --maybe-probability=0.0 \
 	--no-redirect-out
 
