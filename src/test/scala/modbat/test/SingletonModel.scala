@@ -2,7 +2,7 @@ package modbat.test
 
 import modbat.dsl._
 
-class SingletonTest extends Model {
+class SingletonModel extends Model {
   @Before def start(): Unit = {
     println("start")
   }
