@@ -1,6 +1,7 @@
 package modbat.mbt
 
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.io.FileDescriptor
 import java.io.FileOutputStream
 import java.io.PrintStream
@@ -108,13 +109,15 @@ object ModbatTestHarness {
 
   def setExamplesJar() = {
     val mapsetExamplesJar = new java.util.HashMap[String, String]()
-    mapsetExamplesJar.put("CLASSPATH", "build/modbat-examples.jar")
+    val mbexamplesjar = "build" + File.separatorChar + "modbat-examples.jar"
+    mapsetExamplesJar.put("CLASSPATH", mbexamplesjar)
     setEnv (mapsetExamplesJar)
   }
 
   def setTestJar() = {
     val mapsetTestJar = new java.util.HashMap[String, String]()
-    mapsetTestJar.put("CLASSPATH", "build/modbat-test.jar")
+    val mbtestjar = "build" + File.separatorChar + "modbat-test.jar"
+    mapsetTestJar.put("CLASSPATH", mbtestjar)
     setEnv (mapsetTestJar)
   }
 }
