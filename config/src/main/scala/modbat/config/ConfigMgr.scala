@@ -165,27 +165,29 @@ class ConfigMgr (progName: String, argName: String,
 
   def usage: ArgParse = {
     showVersion
-    out.println("Usage: " + progName + " [--OPTION=value] ... " + argName)
-    out.println(formatStr("  -h, --help", HelpArgWidth) + "show this help and exit")
-    out.println(formatStr("  -s, --show", HelpArgWidth) +
+    println("Usage: " + progName + " [--OPTION=value] ... " + argName)
+    println(formatStr("  -h, --help", HelpArgWidth) + "show this help and exit")
+    println(formatStr("  -s, --show", HelpArgWidth) +
 	    "show current configuration")
-    out.println(formatStr("  -v, --version", HelpArgWidth) +
+    println(formatStr("  -v, --version", HelpArgWidth) +
 	    "show version number and exit")
     footnotes.clear()
     for (f <- fields) {
       val doc = new StringBuilder(docStr(f))
+      println(doc)
       val footnote = f.getAnnotation(classOf[Footnote])
+      println(footnote)
       if (footnote != null) {
 	footnotes += footnote.value()
 	doc.append(" [" + footnotes.length + "]")
       }
       val shorthand = f.getAnnotation(classOf[Shorthand])
       if (shorthand != null) {
-	out.println(formatStr("  -" + shorthand.value() +
+	println(formatStr("  -" + shorthand.value() +
 			  ", --" + fieldToCmdArg(f) + " ",
 			  HelpArgWidth) + doc)
       } else {
-	out.println(formatStr("      --" + fieldToCmdArg(f) + " ",
+	println(formatStr("      --" + fieldToCmdArg(f) + " ",
 			  HelpArgWidth) + doc)
       }
     }
@@ -203,6 +205,7 @@ class ConfigMgr (progName: String, argName: String,
   }
 
   def parseArgs(args: Array[String]): Option[Iterator[String]] = {
+    println("inside parseArgs")
     showSplashScreen
     var finished: Boolean = false
     val argIt: Iterator[String] = args.iterator
@@ -231,6 +234,7 @@ class ConfigMgr (progName: String, argName: String,
   /** Parse one argument and return true if finished, i.e., if an argument
       cannot be parsed as an option. */
   def parseArg(s: String): ArgParse = {
+    println("Inside parseargs with arg: "+s)
     s match {
       case "-s" | "--show" => {
 	showConfig

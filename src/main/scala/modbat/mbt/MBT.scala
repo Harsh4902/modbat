@@ -119,11 +119,16 @@ class MBT (val config: Configuration, val log: Log) {
 
   def cpToURL(classpath: String): Array[URL] = {
     val sep = System.getProperty("path.separator")
+
     val paths = classpath.split(sep)
+    println(paths.mkString("Array(", ", ", ")"))
     val urls = ListBuffer[URL]()
     for (p <- paths) {
+      println(p)
       log.debug("Adding " + p + " to classpath.")
-      urls += new File(p).toURI.toURL()
+      val url = new File(p).toURI.toURL()
+      println(url)
+      urls += url;
     }
     urls.toArray
   }

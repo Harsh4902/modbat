@@ -13,6 +13,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     Modbat.isUnitTest = false
+    println(args)
     val config = new Configuration()
     val log = new Log(Console.out, Console.err)
     try {
@@ -26,6 +27,7 @@ object Main {
   def run(args: Array[String], config: Configuration,
           log: Log,
           testData: TestData = new TestData()): Unit = {
+
     var modelClassName: String = null
     val c = new ConfigMgr("scala modbat.jar",
                           "CLASSNAME",
@@ -33,9 +35,11 @@ object Main {
                           new Version("modbat.mbt"),
                           /* test = */false,
                           log.out)
+    println(c.toString)
     /* delegate parsing args to config library */
     try {
       val remainder = c.parseArgs(args)
+      println(remainder)
       remainder match {
         case Some(remainingArgs) => {
           if (!remainingArgs.hasNext) {
