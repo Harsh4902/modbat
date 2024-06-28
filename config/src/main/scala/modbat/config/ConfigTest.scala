@@ -15,7 +15,7 @@ object ConfigTest {
     // parse arguments
     var c: ConfigMgr = null
     c = new ConfigMgr("ConfigTest", "[FILE]", new TestConfiguration(),
-			new Version ("modbat.config"), true)
+			new Version (getClass().getPackage()), true)
     c.setSplashScreen(List("This is a test", "for the splash screen"))
     c.parseArgs(args)
   }

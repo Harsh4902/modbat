@@ -30,7 +30,7 @@ object Main {
     val c = new ConfigMgr("scala modbat.jar",
                           "CLASSNAME",
                           config,
-                          new Version("modbat.mbt"),
+                          new Version(getClass().getPackage()),
                           /* test = */false,
                           log.out)
     /* delegate parsing args to config library */

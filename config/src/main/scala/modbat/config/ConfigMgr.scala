@@ -54,7 +54,7 @@ object ConfigMgr {
     var c: ConfigMgr = null
     try {
       c = new ConfigMgr("ConfigMgr", "[FILE]", new TestConfiguration(),
-			new Version ("modbat.config"), true)
+			new Version (getClass().getPackage()), true)
       printRemainingArgs(c.parseArgs(args))
       } catch {
         case e: IllegalArgumentException => {
