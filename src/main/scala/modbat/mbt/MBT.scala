@@ -129,7 +129,7 @@ class MBT (val config: Configuration, val log: Log) {
   }
 
   // TODO: If necessary, add another argument (tag) to distinguish between
-  // different types of warnings for the same type of object/data.
+  // ifferent types of warnings for the same type of object/data.
   def warningIssued(o: Object) = {
     if (!warningIssuedOn(o)) {
       warningIssuedOn += o
@@ -220,7 +220,11 @@ class MBT (val config: Configuration, val log: Log) {
 
   def loadModelClass(className: String): Unit = {
     /* load model class */
-    try {
+
+    if (className == null)
+      return
+
+    try {   
       val classloader =
         new URLClassLoader(classLoaderURLs,
                            Thread.currentThread().getContextClassLoader())
